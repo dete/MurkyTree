@@ -5,10 +5,21 @@
 //  Created by Dieter Shirley on 2021-02-21.
 //
 
-#include <iostream>
+#include <cstdio>
+
+#include "MurkyTree.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    
+    MurkyTree t;
+    
+    t.DEBUG_print();
+    
+    for (int i = 0; i < 256; i++) {
+        t.insert(HashKey::randomHash(), i);
+        t.DEBUG_print();
+    }
+    
     return 0;
 }
